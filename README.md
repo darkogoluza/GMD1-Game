@@ -1,1 +1,1 @@
-# GMD1-Game
+To view the blogs [click here](https://github.com/darkogoluza/GMD1-Game/tree/main/Blogs)
