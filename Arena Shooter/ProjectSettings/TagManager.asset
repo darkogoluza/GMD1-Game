@@ -3,7 +3,9 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - MainCameraPlayer1
+  - MainCameraPlayer2
   layers:
   - Default
   - TransparentFX
@@ -11,8 +13,8 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
+  - Virtual Camera Layer A
+  - Virtual Camera Layer B
   - 
   - 
   - 
@@ -40,4 +42,10 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Env
+    uniqueID: 800852645
+    locked: 0
+  - name: Player
+    uniqueID: 1423280525
     locked: 0
