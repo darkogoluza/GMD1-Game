@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43ac9fd3fbab35a42a31fbe4a5ffb38e, type: 3}
+  m_Name: BrownSkin
+  m_EditorClassIdentifier: 
+  BackPackSprite: {fileID: -776826007, guid: f58913a17aee4044c964d6be714c2eb8, type: 3}
+  BodySprite: {fileID: 1364470676, guid: f58913a17aee4044c964d6be714c2eb8, type: 3}
+  HeadSprite: {fileID: 118277006, guid: f58913a17aee4044c964d6be714c2eb8, type: 3}
+  LeftArmSprite: {fileID: -41144175, guid: f58913a17aee4044c964d6be714c2eb8, type: 3}
+  RightArmSprite: {fileID: 422831709, guid: f58913a17aee4044c964d6be714c2eb8, type: 3}

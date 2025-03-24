@@ -130,6 +130,7 @@ GameObject:
   - component: {fileID: 745686994015032350}
   - component: {fileID: 7269617433607345038}
   - component: {fileID: 5400972092495689912}
+  - component: {fileID: 4478044930692415253}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -264,6 +265,26 @@ MonoBehaviour:
   m_DefaultActionMap: Default
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &4478044930692415253
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1789405871710215428}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 025b9b8754ea0e14aa7c6f9dab16ae20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _skin: {fileID: 11400000, guid: d5cde5b3e6d51664aa1904cd18cf4804, type: 2}
+  _backPackSpriteRenderer: {fileID: 8511516906981562709}
+  _headSpriteRenderer: {fileID: 2262760055137993374}
+  _bodySpriteRenderer: {fileID: 2465892806594973769}
+  _leftArmGunSpriteRenderer: {fileID: 8515205529551176436}
+  _rightArmGunSpriteRenderer: {fileID: 7268683725071403304}
+  _leftArmPistolSpriteRenderer: {fileID: 4083584472410157476}
+  _rightArmPistolSpriteRenderer: {fileID: 6100474541342534781}
 --- !u!1 &2052740831173210548
 GameObject:
   m_ObjectHideFlags: 0
@@ -363,7 +384,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4940255419570230161
 Transform:
   m_ObjectHideFlags: 0
@@ -396,7 +417,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6504321085765769033
 Transform:
   m_ObjectHideFlags: 0
