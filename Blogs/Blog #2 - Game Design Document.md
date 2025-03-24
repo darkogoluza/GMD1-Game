@@ -8,7 +8,6 @@ The objective is to capture as much area of the arena as posable. When having mo
 Each team will be identified by a given color. The bots will spawn with random weapons (maybe there will be classes). The weapons will have different stats like recoil, fire rate, damage, range, knock back and ammunition capacity. So the player will have to get familiar with different weapons and use them for there own play style.
 
 # Assets and References
-* ~~At this stage I am not sure where I will get all of my assets, but I know what I will be looking into [kenney assets](https://kenney.nl/assets) and [itch.io](https://itch.io/).~~
 * Map tile set, guns, characters assets from [itch.io](https://laplas-games-inc.itch.io/top-down-shooter-asset-pack)
 * Main Menu music from [Fuzzeke](https://www.youtube.com/watch?v=y3pGVWZTo6w)
 * UI assets from [itch.io](https://wenrexa.itch.io/ui-different03)
