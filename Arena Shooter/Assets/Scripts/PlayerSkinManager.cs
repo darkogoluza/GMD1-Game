@@ -2,25 +2,25 @@ using UnityEngine;
 
 public class PlayerSkinManager : MonoBehaviour
 {
-    [SerializeField] private Skin _skin;
-    
+    [SerializeField] private Skin skin;
+
     // Sprites
-    [SerializeField] private SpriteRenderer _backPackSpriteRenderer;
-    [SerializeField] private SpriteRenderer _headSpriteRenderer;
-    [SerializeField] private SpriteRenderer _bodySpriteRenderer;
-    [SerializeField] private SpriteRenderer _leftArmGunSpriteRenderer;
-    [SerializeField] private SpriteRenderer _rightArmGunSpriteRenderer;
-    [SerializeField] private SpriteRenderer _leftArmPistolSpriteRenderer;
-    [SerializeField] private SpriteRenderer _rightArmPistolSpriteRenderer;
+    [SerializeField] private SpriteRenderer backPackSpriteRenderer;
+    [SerializeField] private SpriteRenderer headSpriteRenderer;
+    [SerializeField] private SpriteRenderer bodySpriteRenderer;
+    [SerializeField] private SpriteRenderer leftArmGunSpriteRenderer;
+    [SerializeField] private SpriteRenderer rightArmGunSpriteRenderer;
+    [SerializeField] private SpriteRenderer leftArmPistolSpriteRenderer;
+    [SerializeField] private SpriteRenderer rightArmPistolSpriteRenderer;
 
     private void Awake()
     {
-        _backPackSpriteRenderer.sprite = _skin.BackPackSprite;
-        _headSpriteRenderer.sprite = _skin.HeadSprite;
-        _bodySpriteRenderer.sprite = _skin.BodySprite;
-        _leftArmGunSpriteRenderer.sprite = _skin.LeftArmSprite;
-        _rightArmGunSpriteRenderer.sprite = _skin.RightArmSprite;
-        _leftArmPistolSpriteRenderer.sprite = _skin.LeftArmSprite;
-        _rightArmPistolSpriteRenderer.sprite = _skin.LeftArmSprite;
+        backPackSpriteRenderer.sprite = skin.BackPackSprite;
+        headSpriteRenderer.sprite = skin.HeadSprite;
+        bodySpriteRenderer.sprite = skin.BodySprite;
+        leftArmGunSpriteRenderer.sprite = skin.LeftArmSprite;
+        rightArmGunSpriteRenderer.sprite = skin.RightArmSprite;
+        leftArmPistolSpriteRenderer.sprite = skin.LeftArmSprite;
+        rightArmPistolSpriteRenderer.sprite = skin.LeftArmSprite;
     }
 }

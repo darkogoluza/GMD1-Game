@@ -1,4 +1,3 @@
-using DefaultNamespace;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -17,6 +16,12 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()
     {
         _rigidbody2D.velocity = _movement;
+        
+        if (_movement != Vector2.zero)
+        {
+            float angle = Mathf.Atan2(_movement.y, _movement.x) * Mathf.Rad2Deg;
+            transform.rotation = Quaternion.Euler(0, 0, angle + 90);
+        }
     }
 
     public void OnMovement(InputValue value)

@@ -51,3 +51,15 @@ MonoBehaviour:
     pitch: 1
     loop: 1
     source: {fileID: 0}
+  - name: ReloadSound
+    clip: {fileID: 8300000, guid: c61a0f3025c4ae1429ce5737f36a7ba2, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: AmmoPickUp
+    clip: {fileID: 8300000, guid: ce28c3fc53d65c041889905e18df8b61, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}

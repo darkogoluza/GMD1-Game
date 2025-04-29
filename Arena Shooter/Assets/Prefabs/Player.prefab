@@ -131,7 +131,9 @@ GameObject:
   - component: {fileID: 7269617433607345038}
   - component: {fileID: 5400972092495689912}
   - component: {fileID: 4478044930692415253}
-  m_Layer: 0
+  - component: {fileID: 883983413065335232}
+  - component: {fileID: 5552711442199848907}
+  m_Layer: 10
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -277,14 +279,46 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 025b9b8754ea0e14aa7c6f9dab16ae20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _skin: {fileID: 11400000, guid: d5cde5b3e6d51664aa1904cd18cf4804, type: 2}
-  _backPackSpriteRenderer: {fileID: 8511516906981562709}
-  _headSpriteRenderer: {fileID: 2262760055137993374}
-  _bodySpriteRenderer: {fileID: 2465892806594973769}
-  _leftArmGunSpriteRenderer: {fileID: 8515205529551176436}
-  _rightArmGunSpriteRenderer: {fileID: 7268683725071403304}
-  _leftArmPistolSpriteRenderer: {fileID: 4083584472410157476}
-  _rightArmPistolSpriteRenderer: {fileID: 6100474541342534781}
+  skin: {fileID: 11400000, guid: 917ef779b0d0e38459b1f5fd6b8306f7, type: 2}
+  backPackSpriteRenderer: {fileID: 8511516906981562709}
+  headSpriteRenderer: {fileID: 2262760055137993374}
+  bodySpriteRenderer: {fileID: 2465892806594973769}
+  leftArmGunSpriteRenderer: {fileID: 8515205529551176436}
+  rightArmGunSpriteRenderer: {fileID: 7268683725071403304}
+  leftArmPistolSpriteRenderer: {fileID: 4083584472410157476}
+  rightArmPistolSpriteRenderer: {fileID: 6100474541342534781}
+--- !u!114 &883983413065335232
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1789405871710215428}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f1392862c925c24eb0fec5bee144fe9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gunHolder: {fileID: 7223591691982403681}
+  isPlayerOne: 1
+  targetMasks:
+  - serializedVersion: 2
+    m_Bits: 2048
+  - serializedVersion: 2
+    m_Bits: 4096
+--- !u!114 &5552711442199848907
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1789405871710215428}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 000cff49cf8e6ec4cbc190efb25ac530, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
 --- !u!1 &2052740831173210548
 GameObject:
   m_ObjectHideFlags: 0

@@ -31,6 +31,7 @@ public class AudioManager : MonoBehaviour
         }
     }
 
+    // ReSharper disable Unity.PerformanceAnalysis
     public void Play(string name)
     {
         var sound = Array.Find(sounds, sound => sound.name == name);

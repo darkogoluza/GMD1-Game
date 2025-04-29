@@ -6,6 +6,7 @@ TagManager:
   tags:
   - MainCameraPlayer1
   - MainCameraPlayer2
+  - AmmoPickUp
   layers:
   - Default
   - TransparentFX
@@ -15,12 +16,12 @@ TagManager:
   - UI
   - Virtual Camera Layer A
   - Virtual Camera Layer B
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Enemy
+  - Environment
+  - Team 1
+  - Team 2
+  - Team 3
+  - Post Processing
   - 
   - 
   - 
@@ -48,4 +49,7 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 1423280525
+    locked: 0
+  - name: Wepons
+    uniqueID: 897919195
     locked: 0
