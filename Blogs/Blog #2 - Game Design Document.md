@@ -12,6 +12,7 @@ Each team will be identified by a given color. The bots will spawn with random w
 * Main Menu music from [Fuzzeke](https://www.youtube.com/watch?v=y3pGVWZTo6w)
 * UI assets from [itch.io](https://wenrexa.itch.io/ui-different03)
 * Audio Manager [Brackeys](https://www.youtube.com/watch?v=6OT43pvUyfY)
+* Audio sounds are taken from internet
 
 # Milestones
 1. My first milestone is to create a main menu, and for players to be able to create a play. They get spawned in a arena and they can move around.
