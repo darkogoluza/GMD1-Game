@@ -8,4 +8,6 @@ public interface IWeapon
     public void SetPlayer(bool isPlayerOne);
     public void SetTargetMasks(LayerMask[] targetMasks);
     public void ReplenishAmmo();
+    public int CheckAmmo();
+    public void SetIsBotFlag();
 }

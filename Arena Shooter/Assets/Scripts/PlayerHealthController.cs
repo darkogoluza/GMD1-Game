@@ -52,6 +52,11 @@ public class PlayerHealthController : MonoBehaviour, IDamageable
         EventsManager.Instance.HealthChange(_currentHealth, maxHealth, isPlayerOne);
     }
 
+    public float GetHealth()
+    {
+        return _currentHealth;
+    }
+
     private void RegenerateHealth()
     {
         if (_currentHealth >= maxHealth)

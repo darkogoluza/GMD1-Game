@@ -31,6 +31,7 @@ public class Ak47WeaponController : MonoBehaviour, IWeapon
     private float _accuracyPower = 0;
     private bool _isPlayerOne;
     private LayerMask[] _targetMasks;
+    private bool _isBot = false;
 
     private void Awake()
     {
@@ -44,7 +45,8 @@ public class Ak47WeaponController : MonoBehaviour, IWeapon
     {
         muzzleParticle?.Stop();
 
-        EventsManager.Instance.AmmoChange(_bulletsLeft, _carriedBulletsLeft, _isPlayerOne);
+        if (!_isBot)
+            EventsManager.Instance.AmmoChange(_bulletsLeft, _carriedBulletsLeft, _isPlayerOne);
     }
 
     private void Update()
@@ -121,7 +123,18 @@ public class Ak47WeaponController : MonoBehaviour, IWeapon
     public void ReplenishAmmo()
     {
         _carriedBulletsLeft = maxBullets;
-        EventsManager.Instance.AmmoChange(_bulletsLeft, _carriedBulletsLeft, _isPlayerOne);
+        if (!_isBot)
+            EventsManager.Instance.AmmoChange(_bulletsLeft, _carriedBulletsLeft, _isPlayerOne);
+    }
+
+    public int CheckAmmo()
+    {
+        return _bulletsLeft;
+    }
+
+    public void SetIsBotFlag()
+    {
+        _isBot = true;
     }
 
     public void Reload()
@@ -134,8 +147,12 @@ public class Ak47WeaponController : MonoBehaviour, IWeapon
 
     IEnumerator ReloadCoroutine()
     {
-        EventsManager.Instance.ReloadStart(_isPlayerOne);
-        AudioManager.Instance.Play("ReloadSound");
+        if (!_isBot)
+        {
+            EventsManager.Instance.ReloadStart(_isPlayerOne);
+            AudioManager.Instance.Play("ReloadSound");
+        }
+
         _canFire = false;
 
         yield return new WaitForSeconds(reloadTime);
@@ -155,8 +172,11 @@ public class Ak47WeaponController : MonoBehaviour, IWeapon
 
 
         _canFire = true;
-        EventsManager.Instance.AmmoChange(_bulletsLeft, _carriedBulletsLeft, _isPlayerOne);
-        EventsManager.Instance.ReloadEnd(_isPlayerOne);
+        if (!_isBot)
+        {
+            EventsManager.Instance.AmmoChange(_bulletsLeft, _carriedBulletsLeft, _isPlayerOne);
+            EventsManager.Instance.ReloadEnd(_isPlayerOne);
+        }
     }
 
 

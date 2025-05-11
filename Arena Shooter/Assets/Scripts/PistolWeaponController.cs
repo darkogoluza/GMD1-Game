@@ -28,6 +28,7 @@ public class PistolWeaponController : MonoBehaviour, IWeapon
     private bool _isFiring = false;
     private bool _canFire = true;
     private float _accuracyPower = 0;
+    private bool _isBot = false;
 
     private void Awake()
     {
@@ -40,7 +41,8 @@ public class PistolWeaponController : MonoBehaviour, IWeapon
     {
         muzzleParticle?.Stop();
 
-        EventsManager.Instance.AmmoChange(_bulletsLeft, _carriedBulletsLeft, _isPlayerOne);
+        if (!_isBot)
+            EventsManager.Instance.AmmoChange(_bulletsLeft, _carriedBulletsLeft, _isPlayerOne);
     }
 
     public void StartFire()
@@ -90,7 +92,8 @@ public class PistolWeaponController : MonoBehaviour, IWeapon
 
         _bulletsLeft -= 1;
 
-        EventsManager.Instance.AmmoChange(_bulletsLeft, _carriedBulletsLeft, _isPlayerOne);
+        if (!_isBot)
+            EventsManager.Instance.AmmoChange(_bulletsLeft, _carriedBulletsLeft, _isPlayerOne);
     }
 
     public void Reload()
@@ -103,8 +106,12 @@ public class PistolWeaponController : MonoBehaviour, IWeapon
 
     IEnumerator ReloadCoroutine()
     {
-        EventsManager.Instance.ReloadStart(_isPlayerOne);
-        AudioManager.Instance.Play("ReloadSound");
+        if (!_isBot)
+        {
+            EventsManager.Instance.ReloadStart(_isPlayerOne);
+            AudioManager.Instance.Play("ReloadSound");
+        }
+
         _canFire = false;
 
         yield return new WaitForSeconds(reloadTime);
@@ -124,14 +131,29 @@ public class PistolWeaponController : MonoBehaviour, IWeapon
 
 
         _canFire = true;
-        EventsManager.Instance.AmmoChange(_bulletsLeft, _carriedBulletsLeft, _isPlayerOne);
-        EventsManager.Instance.ReloadEnd(_isPlayerOne);
+        if (!_isBot)
+        {
+            EventsManager.Instance.AmmoChange(_bulletsLeft, _carriedBulletsLeft, _isPlayerOne);
+            EventsManager.Instance.ReloadEnd(_isPlayerOne);
+        }
     }
-    
+
     public void ReplenishAmmo()
     {
         _carriedBulletsLeft = maxBullets;
-        EventsManager.Instance.AmmoChange(_bulletsLeft, _carriedBulletsLeft, _isPlayerOne);
+
+        if (!_isBot)
+            EventsManager.Instance.AmmoChange(_bulletsLeft, _carriedBulletsLeft, _isPlayerOne);
+    }
+
+    public int CheckAmmo()
+    {
+        return _bulletsLeft;
+    }
+
+    public void SetIsBotFlag()
+    {
+        _isBot = true;
     }
 
     public void SetPlayer(bool isPlayerOne)

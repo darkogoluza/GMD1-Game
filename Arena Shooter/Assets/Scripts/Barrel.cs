@@ -50,6 +50,11 @@ public class Barrel : MonoBehaviour, IDamageable
         }
     }
 
+    public float GetHealth()
+    {
+        return _health;
+    }
+
     private void AreaDamageEnemies(Vector2 location, float radius, float damage, LayerMask layer)
     {
         int count = Physics2D.OverlapCircleNonAlloc(location, radius, _overlapResults, layer);

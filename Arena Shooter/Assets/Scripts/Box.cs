@@ -22,4 +22,9 @@ public class Box : MonoBehaviour, IDamageable
             Destroy(gameObject); 
         }
     }
+
+    public float GetHealth()
+    {
+        return _health;
+    }
 }
