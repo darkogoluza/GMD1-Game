@@ -1,4 +1,5 @@
 To view the blogs [click here](https://github.com/darkogoluza/GMD1-Game/tree/main/Blogs)
+
 Link to the video show off [click here](https://youtu.be/mbLSNBzxtyM)
 
 * Map tile set, guns, characters assets from [itch.io](https://laplas-games-inc.itch.io/top-down-shooter-asset-pack)
