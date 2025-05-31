@@ -38,7 +38,7 @@ public class ShootGunWeaponsController : MonoBehaviour, IWeapon
     {
         muzzleParticle?.Stop();
 
-        if (_isBot)
+        if (!_isBot)
             EventsManager.Instance.AmmoChange(_bulletsLeft, _carriedBulletsLeft, _isPlayerOne);
     }
 
@@ -86,7 +86,7 @@ public class ShootGunWeaponsController : MonoBehaviour, IWeapon
 
         _bulletsLeft -= 1;
 
-        if (_isBot)
+        if (!_isBot)
             EventsManager.Instance.AmmoChange(_bulletsLeft, _carriedBulletsLeft, _isPlayerOne);
     }
 
@@ -100,7 +100,7 @@ public class ShootGunWeaponsController : MonoBehaviour, IWeapon
 
     IEnumerator ReloadCoroutine()
     {
-        if (_isBot)
+        if (!_isBot)
         {
             EventsManager.Instance.ReloadStart(_isPlayerOne);
             AudioManager.Instance.Play("ReloadSound");
@@ -126,7 +126,7 @@ public class ShootGunWeaponsController : MonoBehaviour, IWeapon
 
         _canFire = true;
 
-        if (_isBot)
+        if (!_isBot)
         {
             EventsManager.Instance.AmmoChange(_bulletsLeft, _carriedBulletsLeft, _isPlayerOne);
             EventsManager.Instance.ReloadEnd(_isPlayerOne);
@@ -136,7 +136,7 @@ public class ShootGunWeaponsController : MonoBehaviour, IWeapon
     public void ReplenishAmmo()
     {
         _carriedBulletsLeft = maxBullets;
-        if (_isBot)
+        if (!_isBot)
             EventsManager.Instance.AmmoChange(_bulletsLeft, _carriedBulletsLeft, _isPlayerOne);
     }
 

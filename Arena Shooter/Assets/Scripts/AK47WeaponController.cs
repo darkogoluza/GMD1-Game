@@ -97,7 +97,8 @@ public class Ak47WeaponController : MonoBehaviour, IWeapon
 
         _bulletsLeft -= 1;
 
-        EventsManager.Instance.AmmoChange(_bulletsLeft, _carriedBulletsLeft, _isPlayerOne);
+        if (!_isBot)
+            EventsManager.Instance.AmmoChange(_bulletsLeft, _carriedBulletsLeft, _isPlayerOne);
     }
 
     public void StartFire()

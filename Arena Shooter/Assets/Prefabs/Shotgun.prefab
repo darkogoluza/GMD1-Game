@@ -165,7 +165,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   accuracy: 7.5
   maxBulletsInClip: 2
-  maxBullets: 12
+  maxBullets: 48
   reloadTime: 1.5
   damage: 20
   bulletsPerShoot: 5

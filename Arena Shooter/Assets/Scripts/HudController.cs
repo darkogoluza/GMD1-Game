@@ -55,7 +55,7 @@ public class HudController : MonoBehaviour
         if (isPlayerOne)
         {
             playerOneHealthText.text = Mathf.CeilToInt(healthToAssign) + "%";
-            playerOneHealthSlider.value = healthToAssign;
+            playerOneHealthSlider.value = healthToAssign / 100f;
 
             UpdateDamageIndicator(ref _playerOneDamageLevel, playerOneDamageIndicator, _playerOnePreviousHealth,
                 healthToAssign, isPlayerOne: true);
@@ -64,7 +64,7 @@ public class HudController : MonoBehaviour
         else
         {
             playerTwoHealthText.text = Mathf.CeilToInt(healthToAssign) + "%";
-            playerTwoHealthSlider.value = healthToAssign;
+            playerTwoHealthSlider.value = healthToAssign / 100f;
 
             UpdateDamageIndicator(ref _playerTwoDamageLevel, playerTwoDamageIndicator, _playerTwoPreviousHealth,
                 healthToAssign, isPlayerOne: false);

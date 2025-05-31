@@ -5,7 +5,7 @@ namespace AI
 {
     public class AIManager : MonoBehaviour
     {
-        [SerializeField] private int tickRate = 5; // 0.2 times a second
+        [SerializeField] public int tickRate = 5; // 0.2 times a second
 
         public static AIManager Instance => _instance;
 

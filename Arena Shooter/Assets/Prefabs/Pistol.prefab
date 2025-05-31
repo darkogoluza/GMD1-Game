@@ -53,7 +53,7 @@ MonoBehaviour:
   accuracySpeedBuildUp: 300
   accuracySpeedCoolDown: 3
   maxBulletsInClip: 7
-  maxBullets: 42
+  maxBullets: 126
   reloadTime: 0.75
   damage: 10
   firePoint: {fileID: 8048248695941912712}

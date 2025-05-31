@@ -1,3 +1,4 @@
+using System.Linq;
 using AI.Core;
 using JetBrains.Annotations;
 using UnityEngine;
@@ -21,7 +22,6 @@ namespace AI
         [Header("Shoot Parameters")] [SerializeField]
         private LayerMask[] shootTargetLayers;
 
-        [SerializeField] private Transform gunHolder;
         [SerializeField] private LayerMask obsticleLayerMask;
 
         private Transform _target;
@@ -32,7 +32,11 @@ namespace AI
         private void Awake()
         {
             _agent = GetComponent<NavMeshAgent>();
-            _weapon = gunHolder.GetChild(0).GetComponent<IWeapon>();
+        }
+
+        public void SetUpWeapon(IWeapon weapon)
+        {
+            _weapon = weapon;
             _weapon?.SetTargetMasks(shootTargetLayers);
             _weapon?.SetIsBotFlag();
         }
@@ -44,6 +48,20 @@ namespace AI
             _agent.updateUpAxis = false;
 
             AIManager.Instance?.Register(this);
+
+            transform.rotation = Quaternion.identity;
+        }
+
+        public void SetNewTargetLayerMasks(LayerMask[] newTargetLayerMasks)
+        {
+            shootTargetLayers = newTargetLayerMasks;
+
+            targetLayer = 0;
+
+            foreach (var mask in newTargetLayerMasks)
+            {
+                targetLayer |= mask;
+            }
         }
 
         public void TickBehaviorTree()
@@ -81,32 +99,46 @@ namespace AI
             var reloadNode = new ReloadNode(_weapon);
             var checkAmmoNode = new CheckAmmoNode(() => _weapon.CheckAmmo());
 
-            var root = new ParallelNode(
-                succeedOnAny: false,
-                failOnAny: false,
-                searchNode,
-                new SequenceNode(
-                    onFailure: () => shootNode.StopFiring(),
-                    lookAtNode,
-                    follow,
-                    new ParallelNode(
-                        succeedOnAny: true,
-                        failOnAny: false,
-                        shootNode,
-                        new SequenceNode(
-                            checkAmmoNode,
-                            reloadNode
-                        )
+            var wanderNode = new WanderNode(_agent, GetWanderPoints(GameObject.FindWithTag("WanderPoints").transform));
+
+            var hasTargetNode = new HasTargetNode(() => _target);
+
+            var combatLogic = new SequenceNode(
+                onFailure: () => shootNode.StopFiring(),
+                lookAtNode,
+                follow,
+                new ParallelNode(
+                    succeedOnAny: true,
+                    failOnAny: false,
+                    shootNode,
+                    new SequenceNode(
+                        checkAmmoNode,
+                        reloadNode
                     )
                 )
             );
 
+            var root = new SelectorNode(
+                new SequenceNode(
+                    searchNode,
+                    new SequenceNode(hasTargetNode, combatLogic)
+                ),
+                wanderNode
+            );
+            
             return root;
         }
 
         private void OnDestroy()
         {
             AIManager.Instance?.Unregister(this);
+        }
+
+        private Vector3[] GetWanderPoints(Transform wanderPointsParent)
+        {
+            return wanderPointsParent.Cast<Transform>()
+                .Select(t => t.position)
+                .ToArray();
         }
     }
 }

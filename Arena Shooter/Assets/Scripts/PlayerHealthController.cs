@@ -10,7 +10,7 @@ public class PlayerHealthController : MonoBehaviour, IDamageable
 
     [SerializeField] private float healthRegenSpeed = 15f;
 
-    [Header("Other")] [SerializeField] private bool isPlayerOne;
+    [Header("Other")] [SerializeField] public bool isPlayerOne;
 
     private float _currentHealth;
     private float _timeSinceLastDamage;

@@ -15,6 +15,17 @@ public class PlayerSkinManager : MonoBehaviour
 
     private void Awake()
     {
+        ApplySkin();
+    }
+
+    public void SetSkin(Skin skin)
+    {
+        this.skin = skin;
+        ApplySkin();
+    }
+
+    private void ApplySkin()
+    {
         backPackSpriteRenderer.sprite = skin.BackPackSprite;
         headSpriteRenderer.sprite = skin.HeadSprite;
         bodySpriteRenderer.sprite = skin.BodySprite;

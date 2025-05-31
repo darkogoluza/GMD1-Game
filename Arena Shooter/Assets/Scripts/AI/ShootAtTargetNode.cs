@@ -48,11 +48,8 @@ namespace AI
 
         private void StartFiring()
         {
-            if (!_isFiring)
-            {
-                _isFiring = true;
-                _weapon.StartFire();
-            }
+            _isFiring = true;
+            _weapon.StartFire();
         }
 
         public void StopFiring()
